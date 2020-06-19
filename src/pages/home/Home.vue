@@ -1,12 +1,12 @@
 <template>
-<div></div>
+<div>helloword</div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld'
+  name: 'Home'
 }
 </script>
 
-<style scoped>
+<style>
 </style>
