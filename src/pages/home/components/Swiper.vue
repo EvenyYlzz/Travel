@@ -19,7 +19,13 @@ export default {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
-        loop: true
+        loop: true,
+        speed: 5000,
+        autoplay: {
+          delay: 2200,
+          stopOnLastSlide: false
+        },
+        autoplayDisableOnInteraction: false// 避免手动滑了之后就停止自动滑}动
       },
       swiperList: [{
         id: '0001',
