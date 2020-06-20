@@ -96,11 +96,8 @@ export default {
   .icons >>> .swiper-content
     height :0
     padding-bottom :50%
-  // .icons
-  //     width:100%
-  //     height :0px
-  //     overflow :hidden
-  //     padding-bottom :50%
+  .icons
+    margin-top:.1rem
     .icon
       position  :relative
       float :left
