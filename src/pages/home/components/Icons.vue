@@ -6,7 +6,7 @@
                 <div class="icon-img">
                     <img class="icon-img-content" :src="item.imgUrl">
                 </div>
-                <p class="icon-desc">{{item.name}}</p>
+                <p class="icon-desc">{{item.desc}}</p>
             </div>
         </swiper-slide>
       </swiper>
@@ -16,68 +16,71 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    iconList: Array
+  },
   data () {
     return {
       swiperOption: {
         loop: false,
         autoplay: false
-      },
-      icons: [{
-        id: '0001',
-        imgUrl: '../../../../static/iconimg/1.png',
-        name: '景点门票'
-      },
-      {
-        id: '0002',
-        imgUrl: '../../../../static/iconimg/2.png',
-        name: '一日游'
-      },
-      {
-        id: '0003',
-        imgUrl: '../../../../static/iconimg/3.png',
-        name: '动植物园'
-      },
-      {
-        id: '0004',
-        imgUrl: '../../../../static/iconimg/4.png',
-        name: '天门山公园'
-      },
-      {
-        id: '0005',
-        imgUrl: '../../../../static/iconimg/5.png',
-        name: '张家界公园'
-      },
-      {
-        id: '0006',
-        imgUrl: '../../../../static/iconimg/6.png',
-        name: '必看演出'
-      },
-      {
-        id: '0007',
-        imgUrl: '../../../../static/iconimg/7.png',
-        name: '红石林'
-      },
-      {
-        id: '0008',
-        imgUrl: '../../../../static/iconimg/8.png',
-        name: '凤凰古城'
-      },
-      {
-        id: '0009',
-        imgUrl: '../../../../static/iconimg/9.png',
-        name: '温泉滑雪'
-      },
-      {
-        id: '0010',
-        imgUrl: '../../../../static/iconimg/10.png',
-        name: '玻璃桥'
-      }]
+      }
+      // icons: [{
+      //   id: '0001',
+      //   imgUrl: '../../../../static/iconimg/1.png',
+      //   name: '景点门票'
+      // },
+      // {
+      //   id: '0002',
+      //   imgUrl: '../../../../static/iconimg/2.png',
+      //   name: '一日游'
+      // },
+      // {
+      //   id: '0003',
+      //   imgUrl: '../../../../static/iconimg/3.png',
+      //   name: '动植物园'
+      // },
+      // {
+      //   id: '0004',
+      //   imgUrl: '../../../../static/iconimg/4.png',
+      //   name: '天门山公园'
+      // },
+      // {
+      //   id: '0005',
+      //   imgUrl: '../../../../static/iconimg/5.png',
+      //   name: '张家界公园'
+      // },
+      // {
+      //   id: '0006',
+      //   imgUrl: '../../../../static/iconimg/6.png',
+      //   name: '必看演出'
+      // },
+      // {
+      //   id: '0007',
+      //   imgUrl: '../../../../static/iconimg/7.png',
+      //   name: '红石林'
+      // },
+      // {
+      //   id: '0008',
+      //   imgUrl: '../../../../static/iconimg/8.png',
+      //   name: '凤凰古城'
+      // },
+      // {
+      //   id: '0009',
+      //   imgUrl: '../../../../static/iconimg/9.png',
+      //   name: '温泉滑雪'
+      // },
+      // {
+      //   id: '0010',
+      //   imgUrl: '../../../../static/iconimg/10.png',
+      //   name: '玻璃桥'
+      // }]
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.icons.forEach((item, index) => {
+      this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
