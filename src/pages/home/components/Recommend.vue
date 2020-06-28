@@ -5,7 +5,7 @@
           猜你喜欢
       </div>
       <ul>
-          <li class="item border-bottom" v-for="icon in recommendList" :key="icon.id">
+          <router-link tag="li" class="item border-bottom" v-for="icon in recommendList" :key="icon.id" :to="'/detail/' + icon.id ">
                   <img class="item-img" :src="icon.imgUrl">
               <div class="item-info">
                 <p class="item-title">{{icon.title}}</p>
@@ -14,7 +14,7 @@
                     查看详情
                 </button>
               </div>
-          </li>
+          </router-link>
       </ul>
   </div>
 </template>
