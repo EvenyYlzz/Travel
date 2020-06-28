@@ -1,18 +1,19 @@
 <template>
 <div>
   <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="../../../../static/recommendimg/xiangjiangyoulun.jpg"/>
+      <img class="banner-img" :src="bannerImg"/>
       <div class="banner-info">
-          <div class="banner-title">邮轮江景(SSSSS景区)
+          <div class="banner-title">
+            {{this.sightName}}
           </div>
           <div class="banner-number">
               <span class="iconfont banner-icon">&#xe62c;
               </span>
-              39
+              {{this.gallaryImgs.length}}
           </div>
       </div>
   </div>
-  <common-gallary :imgs="imgs" v-show="showGallary" @close="handelGallaryClose"></common-gallary>
+  <common-gallary :imgs="gallaryImgs" v-show="showGallary" @close="handelGallaryClose"></common-gallary>
 </div>
 </template>
 
@@ -20,10 +21,14 @@
 import CommonGallary from 'common/gallary/Gallary'
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: ['../../../static/recommendimg/xiangjiangyoulun.jpg', '../../../static/recommendimg/ningxianghuitang.jpg']
+      showGallary: false
     }
   },
   methods: {
