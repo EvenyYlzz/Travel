@@ -4,7 +4,8 @@
 #### 安装
 1.  git clone
 2.  cd Travel
-3.  npm run start
+3.  npm install
+4.  npm run start
 #### Instructions
 1.  打开后如果是在浏览器上，请打开控制台调至手机模式预览
 2.  或者使用手机连接同一网络，使用手机进入
